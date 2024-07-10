@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ijj2j14xc2u"]
+
+[ext_resource type="Texture2D" uid="uid://cr51bapt2hky2" path="res://losing_screen.png" id="1_mopxp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LosingScreen" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_mopxp")

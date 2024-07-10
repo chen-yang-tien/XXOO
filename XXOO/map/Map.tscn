@@ -1,0 +1,122 @@
+[gd_scene load_steps=15 format=3 uid="uid://cdeqcyt17kagg"]
+
+[ext_resource type="Script" path="res://map/Map.cs" id="1_1hche"]
+[ext_resource type="Texture2D" uid="uid://rgjvpbq24eiw" path="res://map/empty.png" id="1_syysj"]
+[ext_resource type="Texture2D" uid="uid://cafr6aqpisxlc" path="res://map/enemy.png" id="2_fshq7"]
+[ext_resource type="Texture2D" uid="uid://dykdinywyfd8b" path="res://map/boss.png" id="3_iuf85"]
+[ext_resource type="Texture2D" uid="uid://cpprcalmsxf2h" path="res://map/treasure.png" id="5_8c5hw"]
+[ext_resource type="Script" path="res://map/Treasure.cs" id="5_801s0"]
+[ext_resource type="Texture2D" uid="uid://bel7nqnr1gltn" path="res://map/heal.png" id="6_eihh5"]
+[ext_resource type="Script" path="res://map/Heal.cs" id="7_1hd8u"]
+[ext_resource type="Texture2D" uid="uid://blmbpjges3y2p" path="res://map/shop.png" id="7_8kayq"]
+[ext_resource type="Texture2D" uid="uid://umvhog0xxqyo" path="res://map/event.png" id="8_w60on"]
+[ext_resource type="Script" path="res://map/Shop.cs" id="9_k1663"]
+[ext_resource type="Script" path="res://map/Event1.cs" id="11_rrvrj"]
+[ext_resource type="Script" path="res://map/Event2.cs" id="13_garl6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kr7jl"]
+radius = 90.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1hche")
+
+[node name="Empty1" type="Sprite2D" parent="."]
+position = Vector2(100, 950)
+texture = ExtResource("1_syysj")
+
+[node name="Enemy1" type="Sprite2D" parent="."]
+position = Vector2(300, 950)
+texture = ExtResource("2_fshq7")
+
+[node name="Empty2" type="Sprite2D" parent="."]
+position = Vector2(500, 950)
+texture = ExtResource("1_syysj")
+
+[node name="Enemy2" type="Sprite2D" parent="."]
+position = Vector2(700, 950)
+texture = ExtResource("2_fshq7")
+
+[node name="Empty3" type="Sprite2D" parent="."]
+position = Vector2(900, 950)
+texture = ExtResource("1_syysj")
+
+[node name="Enemy3" type="Sprite2D" parent="."]
+position = Vector2(1100, 950)
+texture = ExtResource("2_fshq7")
+
+[node name="Empty4" type="Sprite2D" parent="."]
+position = Vector2(1300, 950)
+texture = ExtResource("1_syysj")
+
+[node name="Empty5" type="Sprite2D" parent="."]
+position = Vector2(1500, 950)
+texture = ExtResource("1_syysj")
+
+[node name="Boss" type="Sprite2D" parent="."]
+position = Vector2(1700, 950)
+texture = ExtResource("3_iuf85")
+
+[node name="Treasure" type="Area2D" parent="."]
+position = Vector2(300, 200)
+script = ExtResource("5_801s0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Treasure"]
+texture = ExtResource("5_8c5hw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure"]
+shape = SubResource("CircleShape2D_kr7jl")
+
+[node name="Heal" type="Area2D" parent="."]
+position = Vector2(600, 200)
+script = ExtResource("7_1hd8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Heal"]
+texture = ExtResource("6_eihh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heal"]
+shape = SubResource("CircleShape2D_kr7jl")
+
+[node name="Shop" type="Area2D" parent="."]
+position = Vector2(900, 200)
+script = ExtResource("9_k1663")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shop"]
+texture = ExtResource("7_8kayq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop"]
+shape = SubResource("CircleShape2D_kr7jl")
+
+[node name="Event1" type="Area2D" parent="."]
+position = Vector2(1200, 200)
+script = ExtResource("11_rrvrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Event1"]
+texture = ExtResource("8_w60on")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Event1"]
+shape = SubResource("CircleShape2D_kr7jl")
+
+[node name="Event2" type="Area2D" parent="."]
+position = Vector2(1500, 200)
+script = ExtResource("13_garl6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Event2"]
+texture = ExtResource("8_w60on")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Event2"]
+shape = SubResource("CircleShape2D_kr7jl")
+
+[node name="FinishButton" type="Button" parent="."]
+offset_left = 1300.0
+offset_top = 600.0
+offset_right = 1800.0
+offset_bottom = 800.0
+theme_override_font_sizes/font_size = 100
+text = "Finish"
+
+[connection signal="input_event" from="Treasure" to="Treasure" method="_on_input_event"]
+[connection signal="input_event" from="Heal" to="Heal" method="_on_input_event"]
+[connection signal="input_event" from="Shop" to="Shop" method="_on_input_event"]
+[connection signal="input_event" from="Event1" to="Event1" method="_on_input_event"]
+[connection signal="input_event" from="Event2" to="Event2" method="_on_input_event"]
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]

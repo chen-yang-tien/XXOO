@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq144kn0g4ka5"]
+
+[ext_resource type="Script" path="res://TreasureScene.cs" id="1_ljmvf"]
+[ext_resource type="Texture2D" uid="uid://dlld41887xu8x" path="res://treasure_chest.png" id="2_24met"]
+
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_ljmvf")
+
+[node name="FinishButton" type="Button" parent="."]
+offset_left = 1400.0
+offset_top = 860.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+theme_override_font_sizes/font_size = 100
+text = "Finish"
+
+[node name="Hp" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+
+[node name="TreasureChest" type="Sprite2D" parent="."]
+position = Vector2(390, 637)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_24met")
+
+[node name="Prompt" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 1826.0
+offset_bottom = 291.0
+theme_override_font_sizes/font_size = 50
+text = "You found a treasure chest with a syringe of serum and a bottle of pills,
+according to the mechanism of the chest, you can only take one."
+
+[node name="ButtonSerum" type="Button" parent="."]
+offset_left = 770.0
+offset_top = 350.0
+offset_right = 1870.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 50
+text = "Serum (Upgrade the lowest conflict point
+skill by one, lose all but 1 max health)"
+
+[node name="ButtonPills" type="Button" parent="."]
+offset_left = 770.0
+offset_top = 550.0
+offset_right = 1870.0
+offset_bottom = 650.0
+theme_override_font_sizes/font_size = 50
+text = "Pills (Increase max health by 2)"
+
+[node name="ButtonNo" type="Button" parent="."]
+offset_left = 770.0
+offset_top = 700.0
+offset_right = 1870.0
+offset_bottom = 800.0
+theme_override_font_sizes/font_size = 50
+text = "Take none of them (Nothing happens)"
+
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]
+[connection signal="pressed" from="ButtonSerum" to="." method="_on_button_serum_pressed"]
+[connection signal="pressed" from="ButtonPills" to="." method="_on_button_pills_pressed"]
+[connection signal="pressed" from="ButtonNo" to="." method="_on_button_no_pressed"]

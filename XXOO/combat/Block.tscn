@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpamlagugvn11"]
+
+[ext_resource type="Script" path="res://combat/Block.cs" id="1_7jc3j"]
+[ext_resource type="Texture2D" uid="uid://bakf1sqt575lt" path="res://combat/Nope.png" id="2_bpfqt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4gmf"]
+size = Vector2(100, 100)
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_7jc3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bpfqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y4gmf")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://5cgkdxyf6bil"]
+
+[ext_resource type="Script" path="res://ShopScene.cs" id="1_6obue"]
+[ext_resource type="Texture2D" uid="uid://c6rbxj7kn6kas" path="res://the_shop.png" id="1_hsupq"]
+[ext_resource type="Texture2D" uid="uid://cr0f5htlo7uc5" path="res://sold_out.png" id="1_uj8tt"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6obue")
+
+[node name="TheShop" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_hsupq")
+
+[node name="SoldOut" type="Sprite2D" parent="."]
+position = Vector2(689, 261)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_uj8tt")
+
+[node name="FinishButton" type="Button" parent="."]
+offset_left = 1400.0
+offset_top = 860.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+theme_override_font_sizes/font_size = 100
+text = "Finish"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]

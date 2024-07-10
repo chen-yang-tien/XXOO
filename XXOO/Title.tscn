@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://sci8mibjy583"]
+
+[ext_resource type="Script" path="res://Title.cs" id="1_b4aeq"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_b4aeq")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 710.0
+offset_top = 500.0
+offset_right = 1210.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 100
+text = "Start"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 585.0
+offset_top = 154.0
+offset_right = 1315.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 150
+text = "The Game"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 710.0
+offset_top = 770.0
+offset_right = 1210.0
+offset_bottom = 970.0
+theme_override_font_sizes/font_size = 100
+text = "Exit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

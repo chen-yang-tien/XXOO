@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfwlxotb1uklx"]
+
+[ext_resource type="Texture2D" uid="uid://hltmvfkdraas" path="res://win.png" id="1_u6eah"]
+[ext_resource type="Script" path="res://win.cs" id="1_uegom"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uegom")
+
+[node name="Win" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_u6eah")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1381.0
+offset_top = 837.0
+offset_right = 1881.0
+offset_bottom = 1037.0
+theme_override_font_sizes/font_size = 100
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

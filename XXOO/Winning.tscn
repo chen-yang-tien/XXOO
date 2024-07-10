@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://di7vdqc7klx0n"]
+
+[ext_resource type="Texture2D" uid="uid://dr1ff28uwh3ag" path="res://winning_screen.png" id="1_m782a"]
+[ext_resource type="Script" path="res://WinningScreen.cs" id="1_ovfn5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ovfn5")
+
+[node name="WinningScreen" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_m782a")
+
+[node name="FinishButton" type="Button" parent="."]
+offset_left = 1400.0
+offset_top = 860.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+theme_override_font_sizes/font_size = 100
+text = "Finish"
+
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]

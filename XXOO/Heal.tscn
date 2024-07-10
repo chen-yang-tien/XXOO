@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5h0gnqcfwvgo"]
+
+[ext_resource type="Script" path="res://HealScene.cs" id="1_5v2fp"]
+[ext_resource type="Texture2D" uid="uid://c5tkjer70e3gg" path="res://fountain.png" id="2_hjai3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5v2fp")
+
+[node name="FinishButton" type="Button" parent="."]
+offset_left = 1400.0
+offset_top = 860.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+theme_override_font_sizes/font_size = 100
+text = "Finish"
+
+[node name="Hp" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+
+[node name="Fountain" type="Sprite2D" parent="."]
+position = Vector2(417, 660)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_hjai3")
+
+[node name="Prompt" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 1675.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 50
+text = "You have found a fountain with clear-looking water inside, drink it?"
+
+[node name="ButtonYes" type="Button" parent="."]
+offset_left = 1000.0
+offset_top = 400.0
+offset_right = 1700.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 50
+text = "Yes (Heal 6)"
+
+[node name="ButtonNo" type="Button" parent="."]
+offset_left = 1000.0
+offset_top = 600.0
+offset_right = 1700.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 50
+text = "No (Nothing happens)"
+
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]
+[connection signal="pressed" from="ButtonYes" to="." method="_on_button_yes_pressed"]
+[connection signal="pressed" from="ButtonNo" to="." method="_on_button_no_pressed"]

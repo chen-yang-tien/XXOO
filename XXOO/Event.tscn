@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://nwj8bftwi7u"]
+
+[ext_resource type="Script" path="res://EventScene.cs" id="1_1ijel"]
+[ext_resource type="Texture2D" uid="uid://k0qg72qqaomo" path="res://the_event.png" id="2_aox1n"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1ijel")
+
+[node name="TheEvent" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_aox1n")
+
+[node name="FnishButton" type="Button" parent="."]
+offset_left = 1400.0
+offset_top = 860.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+theme_override_font_sizes/font_size = 100
+text = "Finish"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+
+[connection signal="pressed" from="FnishButton" to="." method="_on_fnish_button_pressed"]

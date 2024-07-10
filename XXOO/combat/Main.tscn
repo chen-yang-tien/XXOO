@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://u2yqxp3xrps4"]
+
+[ext_resource type="Script" path="res://combat/Main.cs" id="1_62qxt"]
+[ext_resource type="Texture2D" uid="uid://bn4k1gfdmxep5" path="res://enemy sprites/player.png" id="2_5e781"]
+[ext_resource type="Texture2D" uid="uid://24uu2irv88ep" path="res://player_no_serum.png" id="3_3uyhn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_62qxt")
+
+[node name="Conflict" type="Label" parent="."]
+offset_left = 850.0
+offset_right = 890.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+text = "Conflict:"
+
+[node name="Cross" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 200.0
+offset_right = 316.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 50
+text = "Player:"
+
+[node name="Circle" type="Label" parent="."]
+offset_left = 1600.0
+offset_top = 200.0
+offset_right = 1778.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 50
+text = "Enemy:"
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(263, 850)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_5e781")
+
+[node name="EnemySprite" type="Sprite2D" parent="."]
+position = Vector2(1600, 800)
+scale = Vector2(0.75, 0.75)
+
+[node name="EnemyName" type="Label" parent="."]
+offset_left = 1400.0
+offset_top = 100.0
+offset_right = 1440.0
+offset_bottom = 169.0
+theme_override_font_sizes/font_size = 50
+
+[node name="PlayerNoSerum" type="Sprite2D" parent="."]
+position = Vector2(250, 500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3uyhn")
+
+[node name="EnemySkill" type="Sprite2D" parent="."]
+position = Vector2(1800, 500)
+scale = Vector2(0.5, 0.5)
